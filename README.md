@@ -1,2 +1,4 @@
 <h1>GESTÃO DE PROJETOS</h1>
-<img src="./sprint/image/download">
+    <img align="center" width="310" src="web.gif" />
+
+<img src="./sprint/image/download.png">
