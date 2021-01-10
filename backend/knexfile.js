@@ -6,7 +6,7 @@ module.exports = {
       host:'localhost',
       user:'root',
       password: '',
-      database:'apiprojeto',
+      database:'apiproject',
     },
     migrations:{
       directory: __dirname + '/src/database/migrations'
