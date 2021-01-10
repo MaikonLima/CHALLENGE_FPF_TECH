@@ -26,47 +26,9 @@ footer {
   font-weight: 400;
 }
 
-.ul-url li{
-  display: inline;
-  padding:100px ;
-  margin-left: 100px;
+.card{
+  padding:15px;
 }
-
-.ul-url .hits{
-  text-align: center;
-}
-
-.ul-url hr{
-  padding: 0%;
-  margin:0%;
-  width: 100%;
-}
-
-.hit{
-    color:#9e2e3f;
-    background-color: white;
-    width: 200px;
-    border-radius: 5px;
-    border: 1px solid #dedede;
-}
-.pos-header{
- display:flex;
- min-height: 500px;
- width: 1500px;
-}
-.click{
-  font-size: 14px;
-  color: #777;
-}
-/* .principal{
-  background: url("../../assets/background-home.jpg");
-  background-size:100% 100%;
-  /* background: url('../../assets/background-home.jpg');*/
-  /* min-height: 500px; 
-  text-align: center;
-  color: #EEE;
-  font-family: 'Roboto Slab', serif;
-} */ 
 
 .principal input{
   font-family: 'Roboto', serif;
@@ -109,4 +71,24 @@ footer {
   background-color: #dd6718;
   border-radius: 0px;
   border-color:#dd6718 ;
+}
+
+.dialog-demo .p-button {
+  margin: 0 .5rem 0 0;
+  min-width: 10rem;
+}
+
+.dialog-demo p {
+  margin: 0;
+  line-height: 1.5;
+}
+
+.dialog-demo .confirmation-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dialog-demo .p-dialog .p-button {
+  min-width: 6rem;
 }

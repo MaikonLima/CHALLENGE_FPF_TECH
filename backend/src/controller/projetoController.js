@@ -1,3 +1,4 @@
+const { query } = require('express');
 const connection = require('../database/connection');
 
 
@@ -63,20 +64,23 @@ module.exports = {
     async delete(request, response) {
         // const { id_project } = request.body;
         
-        const id_project = request.headers.authorization;
+        const id_project = request.params.id_project;
 
-        const project = await connection('project')
-        .where('id_project', id_project)
-        .select('id_project')
-        .first();
+        console.log(id_project);
+        // const id_project = request.headers.authorization;
 
-        if(project.id_project != id_project){
-            return response.status(401).json({error: "Operação não autorizada!"});
-        }
+        // const project = await connection('project')
+        // .where('id_project', id_project)
+        // .select('id_project')
+        // .first();
 
-        await connection('project').where('id_porject',id_project).delete();
+        // if(project.id_project != id_project){
+        //     return response.status(401).json({error: "Operação não autorizada!"});
+        // }
 
-        return response.status(200).send();
+        // await connection('project').where('id_porject',id_project).delete();
+
+        // return response.status(200).send();
     }
 
 

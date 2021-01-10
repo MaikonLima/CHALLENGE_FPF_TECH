@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import { Form, Button, Row, Col } from 'react-bootstrap';
+import { FaSave } from 'react-icons/fa';
 
 //Chamada API 
 import api from '../../services/api';
@@ -10,29 +11,29 @@ export default function NewProject() {
 
     const history = useHistory();
 
-    const id_project = localStorage.getItem('id_project');
+    // const id_project = localStorage.getItem('id_project');
 
-    const [nome_project, setNome_project] = useState('');
-    const [data_inicio, setData_inicio] = useState('');
-    const [data_termino, setData_termino] = useState('');
-    const [valor, setValor] = useState('');
-    const [risco, setRisco] = useState('');
-    const [participantes, setParticipantes] = useState('');
+    const [name_project, setName_project] = useState('');
+    const [date_initial, setDate_initial] = useState('');
+    const [date_final, setDate_final] = useState('');
+    const [value, setValue] = useState('');
+    const [risk, setRisk] = useState('');
+    const [name_participant, setName_participant] = useState('');
 
-    async function handleNewProrject(e) {
+    async function handleNewProject(e) {
         e.preventDefault();
 
         const data = {
-            nome_project,
-            data_inicio,
-            data_termino,
-            valor,
-            risco,
-            participantes,
+            name_project,
+            date_initial,
+            date_final,
+            value,
+            risk,
+            name_participant,
         };
-
+        // console.log(data);
         try {
-            const response = await api.post('/projects/create', { data })
+            const response = await api.post('/project/create', data)
             console.log(response);
         } catch (err) {
             alert('Erro ao cadastrar projeto, tente novamente.');
@@ -54,8 +55,9 @@ export default function NewProject() {
                             type="text"
                             required="true"
                             placeholder="nome do projeto"
-                            value={nome_project}
-                            onChange={e => setNome_project(e.target.value)}
+                            value={name_project}
+                            onChange={e => setName_project(e.target.value)}
+                            required
                         />
                     </Form.Group>
 
@@ -64,17 +66,19 @@ export default function NewProject() {
                             <Col>
                                 <Form.Label>Data Início</Form.Label>
                                 <Form.Control
-                                    type="date"
-                                    value={data_inicio}
-                                    onChange={e => setData_inicio(e.target.value)}
+                                    w type="date"
+                                    value={date_initial}
+                                    onChange={e => setDate_initial(e.target.value)}
+                                    required
                                 />
                             </Col>
                             <Col>
                                 <Form.Label>Data de término</Form.Label>
                                 <Form.Control
                                     type="date"
-                                    value={data_termino}
-                                    onChange={e => setData_termino(e.target.value)}
+                                    value={date_final}
+                                    onChange={e => setDate_final(e.target.value)}
+                                    required
                                 />
                             </Col>
                         </Row>
@@ -84,18 +88,23 @@ export default function NewProject() {
                         <Row>
                             <Col>
                                 <Form.Label>Valor do Projeto</Form.Label>
+                                <strong>VALOR: </strong>
+                                {/* <p>{Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(value.value)}</p> */}
                                 <Form.Control
-                                    type="money"
-                                    value={valor}
-                                    onChange={e => setValor(e.target.value)}
+
+                                    value={value}
+                                    onChange={e => setValue(e.target.value)}
+                                    required
                                 />
+                                {/* {Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(value.value)} */}
                             </Col>
                             <Col>
                                 <Form.Label>Risco do projeto</Form.Label>
                                 <Form.Control
                                     type="number"
-                                    value={risco}
-                                    onChange={e => setRisco(e.target.value)}
+                                    value={risk}
+                                    onChange={e => setRisk(e.target.value)}
+                                    required
                                 />
                             </Col>
                         </Row>
@@ -104,19 +113,21 @@ export default function NewProject() {
                         <Form.Label>Participantes do Projeto</Form.Label>
                         <Form.Control
                             type="text"
-                            value={participantes}
-                            onChange={e => setParticipantes(e.target.value)}
+                            value={name_participant}
+                            onChange={e => setName_participant(e.target.value)}
+                            required
                         />
                     </Form.Group>
 
-                    <Button variant="primary" onClick={handleNewProrject}>
-                        Cadastrar Projeto
+                    <Button variant="primary" onClick={handleNewProject}>
+                        <FaSave
+                            size={20}
+                            color="#eeeeee" />&nbsp;
+                        Cadastrar
                     </Button>
                  &nbsp;
                  &nbsp;
-                 <Button variant="danger" type="submit">
-                        Cancelar
-                 </Button>
+                 <Button variant="danger" href="/">Voltar</Button>
                 </Form>
             </div>
 
