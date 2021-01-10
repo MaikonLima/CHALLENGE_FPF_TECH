@@ -25,7 +25,6 @@ export default function Home() {
     });
 
     async function handleDeleteProject(id_project) {
-    
         console.log(id_project);
         await api.delete(`/project/delete/${id_project}`);
     }
