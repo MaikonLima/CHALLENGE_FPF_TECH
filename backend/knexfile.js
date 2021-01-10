@@ -1,13 +1,17 @@
 module.exports = {
+
   development: {
-    client: 'sqlite3',
+    client: 'mysql',
     connection: {
-      filename: './src/database/db.sqlite'
+      host:'localhost',
+      user:'root',
+      password: '',
+      database:'apiprojeto',
     },
-    migrations: {
-      directory: './src/database/migrations'
+    migrations:{
+      directory: __dirname + '/src/database/migrations'
     },
-    useNullAsDefault: true,
+    useNullAsDefault:true
   },
 
   staging: {

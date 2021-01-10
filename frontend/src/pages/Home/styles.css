@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;500;700&display=swap');
+
+
+header {
+    padding: 0px;
+    text-align: center;
+    font-size: 35px;
+    /* background:linear-gradient(90deg, #d3cce3 0%,#e9e4f0 100% ); */
+    background:linear-gradient(90deg, #0f0c29 0%,#302b63 50%,#24243e 100% );
+    color: rgb(255, 255, 255);
+    background-color: #005aa7;
+}
+footer {
+  padding: 0px;
+  text-align: center;
+  font-size: 35px;
+  background: #EEE;
+}
+.container-custom{
+  background-color: #eeeeee;
+  padding:100px;
+}
+.container-custom h1{
+  color:#c70c1f;
+  font-family: 'Roboto Slab', serif;
+  font-weight: 400;
+}
+
+.ul-url li{
+  display: inline;
+  padding:100px ;
+  margin-left: 100px;
+}
+
+.ul-url .hits{
+  text-align: center;
+}
+
+.ul-url hr{
+  padding: 0%;
+  margin:0%;
+  width: 100%;
+}
+
+.hit{
+    color:#9e2e3f;
+    background-color: white;
+    width: 200px;
+    border-radius: 5px;
+    border: 1px solid #dedede;
+}
+.pos-header{
+ display:flex;
+ min-height: 500px;
+ width: 1500px;
+}
+.click{
+  font-size: 14px;
+  color: #777;
+}
+/* .principal{
+  background: url("../../assets/background-home.jpg");
+  background-size:100% 100%;
+  /* background: url('../../assets/background-home.jpg');*/
+  /* min-height: 500px; 
+  text-align: center;
+  color: #EEE;
+  font-family: 'Roboto Slab', serif;
+} */ 
+
+.principal input{
+  font-family: 'Roboto', serif;
+  background: none;
+  border-bottom: 2px solid #fa7015;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-radius: 0px;
+  
+}
+.principal input:focus{
+  font-family: 'Roboto', serif;
+  background: none;
+  border-bottom: 2px solid #fa7015;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-radius: 0px;
+  box-shadow: none;
+  
+}
+.principal input::placeholder {
+  color: #fa7015;
+}
+
+.principal button{
+  font-family: 'Roboto', serif;
+  background-color: #fa7015;
+  border-radius: 0px;
+  border-color:#fa7015 ;
+  font-size: 14px;
+  font-weight: bold;
+  width: 100px;
+  height: 38px;
+  color: #EEE;
+}
+.principal button:hover{
+  font-family: 'Roboto', serif;
+  background-color: #dd6718;
+  border-radius: 0px;
+  border-color:#dd6718 ;
+}
