@@ -11,7 +11,8 @@
     "intl": "^1.2.5",
     "knex": "^0.21.15",
     "mysql": "^2.18.1",
-    "nodemon": "^2.0.7"
+    "nodemon": "^2.0.7",
+    "pg": "^8.5.1"
   },
   "devDependencies": {},
   "scripts": {

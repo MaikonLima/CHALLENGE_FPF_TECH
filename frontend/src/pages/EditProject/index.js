@@ -9,14 +9,24 @@ import { Card, Button, Tab, Sonnet, Tabs, Row, Col } from 'react-bootstrap';
 import api from "../../services/api";
 
 
-export default function Home() {
+export default function EditProject(props) {
+
+    const [id_project, setid_project] = useState(props.match.params.id_project);
 
     const [project, setProject] = useState([]);
+
+    useEffect(() => {
+
+        api.get(`/project/${id_project}`).then((response) => {
+            setProject(response.data);
+        })
+
+    }, []);
 
     async function handleUpdateProject(id_project) {
         
         try {
-            await api.update(`/project/update/${id_project}`);
+            await api.update(`/project/update`);
             
         } catch (err) {
             console.log(id_project)
@@ -54,6 +64,14 @@ export default function Home() {
                                                 </Card.Text>
                                             </Col>
                                         </Row>
+                                        <Button variant="primary">
+                                            Atualizar
+                                        </Button>
+                                        &nbsp;
+                                        &nbsp;
+                                        <Button href="/"  variant="warning">
+                                            Voltar
+                                        </Button>
                                     </Card.Body>
                                 </Card>
 

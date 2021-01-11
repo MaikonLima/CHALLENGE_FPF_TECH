@@ -13,7 +13,7 @@ function Routes(){
             <Switch>
                 <Route path="/" exact component={Home}/>
                 <Route path="/new" component={NewProject}/>
-                <Route path="/editar" component={EditProject}/>
+                <Route path="/editar/:id_project" component={EditProject}/>
             </Switch>
         </BrowserRouter>
     );

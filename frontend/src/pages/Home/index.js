@@ -4,13 +4,13 @@ import { Dialog } from 'primereact/dialog';
 import { FaPen, FaTrash } from 'react-icons/fa';
 import './styles.css';
 import Swal from 'sweetalert2';
-import swal from  'sweetalert';
+import swal from 'sweetalert';
 import { Card, Button, Tab, Sonnet, Tabs, Row, Col } from 'react-bootstrap';
 import api from "../../services/api";
 
 
 export default function Home() {
-  
+
     // const id_project = localStorage.getItem('id_project');
 
     const [project, setProject] = useState([]);
@@ -25,21 +25,10 @@ export default function Home() {
     });
 
     async function handleDeleteProject(id_project) {
-        console.log(id_project);
+
         await api.delete(`/project/delete/${id_project}`);
     }
-    
 
-    async function handleUpdateProject(id_project) {
-        
-        try {
-            await api.update(`/project/update/${id_project}`);
-            
-        } catch (err) {
-            console.log(id_project)
-            alert("Erro ao editar projeto, tente novamente.");
-        }
-    }
     return (
         <div>
             <header>Gestão de Projetos</header>
@@ -51,8 +40,8 @@ export default function Home() {
                 <div className="py-5">
                     <div className="row d-flex">
 
-                        {project.map((item, key) =>
-                            <div className="col-lg-4 mb-5" key={item.id}>
+                        {project.map((item) =>
+                            <div className="col-lg-4 mb-5" key={item.id_project}>
                                 <Card style={{ width: '22rem' }}>
                                     <Card.Body>
                                         <strong>Nome do Projeto</strong>
@@ -78,15 +67,16 @@ export default function Home() {
 
                                         <Row>
                                             <Col>
-                                                <Button
-                                                    onClick={() => handleUpdateProject(project.id_project)}
-                                                    variant="warning">
-                                                    <FaPen size={20} color="#eeeeee" />&nbsp;Editar</Button>
+                                                <Link to={`/editar/${item.id_project}`}>
+                                                    <Button
+                                                        variant="warning">
+                                                        <FaPen size={20} color="#eeeeee" />&nbsp;Editar</Button>
+                                                </Link>
                                             </Col>
                                             <Col>
 
                                                 <Button onClick={() => {
-                                                     Swal.fire({
+                                                    Swal.fire({
                                                         title: "Deletar projeto?",
                                                         text: "",
                                                         icon: "warning",
@@ -95,7 +85,7 @@ export default function Home() {
                                                         confirmButtonText: `Deletar`,
                                                     }).then((result) => {
                                                         if (result) {
-                                                            Swal.fire("Projeto Excluído!",'', 'success', {
+                                                            Swal.fire("Projeto Excluído!", '', 'success', {
                                                                 icon: "sucess",
                                                             });
                                                             handleDeleteProject(item.id_project);
@@ -105,11 +95,6 @@ export default function Home() {
                                                     variant="danger"><FaTrash
                                                         size={20}
                                                         color="#eeeeee" />&nbsp;Excluir</Button>
-                                            </Col>
-                                            <Col>
-                                            <Button>
-                                                Simular Investimento
-                                            </Button>
                                             </Col>
                                         </Row>
                                     </Card.Body>
