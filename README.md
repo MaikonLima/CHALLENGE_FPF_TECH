@@ -2,7 +2,7 @@
 <img src="./sprint/fpf.png">
 </p>
 <h1 align="center">FPF_Tech - Desafio Técnico - GESTÃO DE PROJETOS</h1>
-<p align="center">Desafio proposto foi desenvolver um gerenciador de projeto, ccontendo back-end, front-end e base de dados.</p>
+<p align="center">Desafio proposto foi desenvolver um gerenciador de projeto, contendo back-end, front-end e base de dados.</p>
 
 <h3>Ferramentas utilizadas</h3>
 <ul>
