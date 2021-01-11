@@ -1,8 +1,8 @@
 <p align="center">
 <img src="./sprint/fpf.png">
 </p>
-<h1>FPF_Tech - Desafio Técnico - GESTÃO DE PROJETOS</h1>
-<p>Desafio proposto foi desenvolver um gerenciador de projeto, ccontendo back-end, front-end e base de dados.</p>
+<h1 align="center">FPF_Tech - Desafio Técnico - GESTÃO DE PROJETOS</h1>
+<p align="center">Desafio proposto foi desenvolver um gerenciador de projeto, ccontendo back-end, front-end e base de dados.</p>
 
 <h3>Ferramentas utilizadas</h3>
 <ul>
@@ -28,7 +28,7 @@
 <h3>Acesso do sistema Web</h3>
 <p>http://localhost:3000/</p>
   
-  <h3><center>Visão do Sistema</center></h3>
+  <h3 align="center">Visão do Sistema</h3>
   <p>
    <img src="./sprint/homeproject.PNG" />
   </p>
