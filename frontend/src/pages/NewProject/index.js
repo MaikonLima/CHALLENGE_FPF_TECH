@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
-import { Form, Button, Row, Col } from 'react-bootstrap';
+import { Form, Button, Row, Col, Dropdown } from 'react-bootstrap';
 import { FaSave } from 'react-icons/fa';
 
 //Chamada API 
@@ -47,18 +47,37 @@ export default function NewProject() {
             <header>Novo Projeto</header>
             <br></br>
             <br></br>
-            <div className="container-sm">
+            <div className="container-custom">
                 <Form>
                     <Form.Group>
-                        <Form.Label>Nome do Projeto</Form.Label>
-                        <Form.Control
-                            type="text"
-                            required="true"
-                            placeholder="nome do projeto"
-                            value={name_project}
-                            onChange={e => setName_project(e.target.value)}
-                            required
-                        />
+                        <Row>
+                            <Col>
+                                <Form.Label>Nome do Projeto</Form.Label>
+                                <Form.Control
+                                    type="text"
+                                    required="true"
+                                    placeholder="nome do projeto"
+                                    value={name_project}
+                                    onChange={e => setName_project(e.target.value)}
+                                    required={true}
+                                />
+                            </Col>
+                            <Col>
+                                <Form.Label>Valor do Projeto</Form.Label>
+                                {/* <strong>VALOR: </strong> */}
+                                {/* <p>{Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(value.value)}</p> */}
+                                <Form.Control
+                                    type='number'
+                                    value={value}
+                                    onChange={e => setValue(e.target.value)}
+                                    required
+                                />
+                                {/* {Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(value.value)} */}
+                            </Col>
+                        </Row>
+
+
+
                     </Form.Group>
 
                     <Form.Group>
@@ -77,35 +96,30 @@ export default function NewProject() {
                                 <Form.Control
                                     type="date"
                                     value={date_final}
-                                    onChange={e => setDate_final(e.target.value)}
+                                    onChange={ e => setDate_final(e.target.value)}
                                     required
                                 />
                             </Col>
-                        </Row>
-                    </Form.Group>
-
-                    <Form.Group>
-                        <Row>
                             <Col>
-                                <Form.Label>Valor do Projeto</Form.Label>
-                                <strong>VALOR: </strong>
-                                {/* <p>{Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(value.value)}</p> */}
-                                <Form.Control
-
-                                    value={value}
-                                    onChange={e => setValue(e.target.value)}
-                                    required
-                                />
-                                {/* {Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(value.value)} */}
-                            </Col>
-                            <Col>
-                                <Form.Label>Risco do projeto</Form.Label>
-                                <Form.Control
+                            <Form.Label>Risco do projeto</Form.Label>
+                                <select className="form-control" 
+                                type='text'
+                                value={risk}
+                                onChange={ e => setRisk(e.target.value)}
+                                required={true}
+                                >
+                                <option defaultValue="DEFAULT"></option>
+                                <option value='0'>Baixo</option>
+                                <option value='1'>Médio</option>
+                                <option value='2'>Alto</option>
+                                </select>
+                                
+                                {/* <Form.Control
                                     type="number"
                                     value={risk}
                                     onChange={e => setRisk(e.target.value)}
                                     required
-                                />
+                                /> */}
                             </Col>
                         </Row>
                     </Form.Group>
@@ -119,7 +133,7 @@ export default function NewProject() {
                         />
                     </Form.Group>
 
-                    <Button variant="primary" onClick={handleNewProject}>
+                    <Button style={{ backgroundColor: '#262151'}} onClick={handleNewProject}>
                         <FaSave
                             size={20}
                             color="#eeeeee" />&nbsp;
@@ -130,7 +144,6 @@ export default function NewProject() {
                  <Button variant="danger" href="/">Voltar</Button>
                 </Form>
             </div>
-
         </div>
     );
 }

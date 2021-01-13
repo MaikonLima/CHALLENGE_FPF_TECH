@@ -64,12 +64,12 @@ export default function EditProject(props) {
                                                 </Card.Text>
                                             </Col>
                                         </Row>
-                                        <Button variant="primary">
+                                        <Button style={{ backgroundColor: '#262151'}}>
                                             Atualizar
                                         </Button>
                                         &nbsp;
                                         &nbsp;
-                                        <Button href="/"  variant="warning">
+                                        <Button href="/"  variant="light">
                                             Voltar
                                         </Button>
                                     </Card.Body>
